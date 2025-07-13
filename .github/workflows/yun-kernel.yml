@@ -24,26 +24,9 @@ jobs:
         pwd
         ls -al
         cat ./config.env  # 确认存在
-
-    - name: 大容量空间支持
-      uses: easimon/maximize-build-space@master
-      with:
-          root-reserve-mb: 8192
-          temp-reserve-mb: 2048
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
-
-          
-    - uses: actions/checkout@v3
-      with:
-          path: KernelSU
-          fetch-depth: 0
     - name: 工作配置
-      #shell: bash
+      shell: bash
       working-directory: ${{ github.workspace }}
-      
       run: |
         cat ./config.env  # 确认存在
         echo "LXC_DOCKER=$(cat config.env | grep -w "LXC_DOCKER" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
@@ -78,6 +61,23 @@ jobs:
         echo "NEED_DTBO=$(cat config.env | grep -w "NEED_DTBO" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
         echo "BUILD_BOOT_IMG=$(cat config.env | grep -w "BUILD_BOOT_IMG" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
         echo "SOURCE_BOOT_IMAGE=$(cat config.env | grep -w "SOURCE_BOOT_IMAGE" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
+
+
+    - name: 大容量空间支持
+      uses: easimon/maximize-build-space@master
+      with:
+          root-reserve-mb: 8192
+          temp-reserve-mb: 2048
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+
+          
+    - uses: actions/checkout@v3
+      with:
+          path: KernelSU
+          fetch-depth: 0
 
     - name: 构建编译内核环境
       run: |
