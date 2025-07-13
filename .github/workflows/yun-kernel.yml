@@ -146,7 +146,8 @@ jobs:
         cd $GITHUB_WORKSPACE/kernel_workspace
         echo ${{ env.KERNEL_SOURCE }} 
         echo ${{ env.KERNEL_SOURCE_BRANCH }}
-        git clone ${{ env.KERNEL_SOURCE }} -b ${{ env.KERNEL_SOURCE_BRANCH }} android-kernel --depth=1
+        #git clone ${{ env.KERNEL_SOURCE }} -b ${{ env.KERNEL_SOURCE_BRANCH }} android-kernel --depth=1
+        git clone https://github.com/Rinko-Studio/android_kernel_xiaomi_thyme -b thirteen android-kernel --depth=1
         
     - name: 开启KVM配置
       if: env.ENABLE_KVM == 'true'
