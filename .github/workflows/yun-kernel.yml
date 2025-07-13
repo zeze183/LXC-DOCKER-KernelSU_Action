@@ -16,6 +16,11 @@ jobs:
       CCACHE_HARDLINK: "true"
       
     steps:
+    - name: Debug 当前目录和文件
+      run: |
+        pwd
+        ls -al
+
     - name: 大容量空间支持
       uses: easimon/maximize-build-space@master
       with:
