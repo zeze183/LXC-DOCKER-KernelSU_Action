@@ -223,7 +223,7 @@ jobs:
         # ksu
         #curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.9.5
         # sukisu
-        curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/refs/heads/main/kernel/setup.sh" | bash -s v3.1.7
+        curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/refs/heads/main/kernel/setup.sh" | bash -s v3.1
         echo "UPLOADNAME=-KernelSU" >> $GITHUB_ENV
 
     - name: 开启KSU补充内核配置
