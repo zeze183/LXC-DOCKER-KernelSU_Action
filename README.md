@@ -3,6 +3,8 @@
 # KernelSU+LXC+DOCKER Action
 
 用于 Non-GKI Kernel 的 Action，具有一定的普遍性，需要了解内核及 Android 的相关知识得以运用。
+本次修复了一些原来作者的一些bug以及一些内核源码导致的编译失败
+使用的内核源码是https://github.com/typezhi/Rinko_android_kernel_xiaomi_thyme
 
 ## 警告:warning: :warning: :warning:
 
