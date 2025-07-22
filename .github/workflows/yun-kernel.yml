@@ -190,7 +190,7 @@ jobs:
       if: env.LXC_PATCH == 'true'
       run: |
        cd $GITHUB_WORKSPACE/kernel_workspace
-       wget https://github.com/fate-think/LXC-DOCKER-KernelSU_Action/releases/download/1.0.0/runcpatch.sh
+       wget https://github.com/tomxi1997/lxc-docker-support-for-android/raw/08047ee6bffec57b13f1549846c516670fb09faa/runcpatch.sh
        chmod a+x runcpatch.sh
        if [ -f android-kernel/kernel/cgroup.c ]; then
        ./runcpatch.sh android-kernel/kernel/cgroup.c               
